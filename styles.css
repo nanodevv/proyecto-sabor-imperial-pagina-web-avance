@@ -219,6 +219,39 @@ SECCIÓN NOSOTROS
     color: #ff5733;
 }
 
+.horarios-tabla {
+    margin-top: 30px;
+    background-color: #fafafa;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 1px solid #f0f0f0;
+    max-width: 350px;
+}
+
+.horarios-tabla h4 {
+    margin-bottom: 12px;
+    color: #444;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.horarios-tabla table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.horarios-tabla td {
+    padding: 6px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.horarios-tabla td:last-child {
+    text-align: right;
+    font-weight: 500;
+    color: #ff5733;
+}
+
 /* =========================
 SECCIÓN PLATILLOS
 ========================= */
@@ -475,8 +508,8 @@ LOGIN / RESERVA
 }
 
 .login-box {
-    width: 320px;
-    padding: 40px;
+    width: 400px;
+    padding: 45px 40px;
     border-radius: 15px;
     background: rgba(255,255,255,0.1);
     backdrop-filter: blur(15px);
