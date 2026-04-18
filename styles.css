@@ -1,5 +1,5 @@
 /* =========================
-   RESET GENERAL
+RESET GENERAL
 ========================= */
 * {
     margin: 0;
@@ -44,7 +44,7 @@ section {
 }
 
 /* =========================
-   HEADER / NAVBAR
+HEADER / NAVBAR
 ========================= */
 header {
     background: transparent;
@@ -120,7 +120,7 @@ li {
 }
 
 /* =========================
-   SECCIÓN FONDO (PORTADA)
+SECCIÓN FONDO (PORTADA)
 ========================= */
 #fondo {
     position: relative;
@@ -156,7 +156,7 @@ li {
 }
 
 /* =========================
-   SECCIÓN NOSOTROS
+SECCIÓN NOSOTROS
 ========================= */
 #nosotros {
     min-height: 100vh;
@@ -218,7 +218,7 @@ li {
 }
 
 /* =========================
-   SECCIÓN PLATILLOS
+SECCIÓN PLATILLOS
 ========================= */
 #platillos {
     background-color: #fdf6f0;
@@ -288,7 +288,7 @@ li {
 }
 
 /* =========================
-   SECCIÓN TESTIMONIOS
+SECCIÓN TESTIMONIOS
 ========================= */
 #testimonios {
     background-color: #1a1a1a;
@@ -361,7 +361,7 @@ li {
 }
 
 /* =========================
-   FOOTER
+FOOTER
 ========================= */
 footer {
     background-color: #1a1a1a;
@@ -421,7 +421,7 @@ footer {
 }
 
 /* =========================
-   LOGIN / RESERVA
+LOGIN / RESERVA
 ========================= */
 .login-body {
     margin: 0;
