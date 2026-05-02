@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sabor Imperial</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 </head>
@@ -18,9 +18,9 @@
 
         <div class="nav-right">
             <ul class="nav-center">
-                <li><a href="#fondo">Inicio</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#platillos">Platillos</a></li>
+                <li><a href="index.htm">Inicio</a></li>
+                <li><a href="nosotros.htm">Nosotros</a></li>
+                <li><a href="platillos.htm">Platillos</a></li>
                 <li><a href="reserva.htm">Reservas</a></li>
                 <li><a href="#" class="btn-whatsapp">Delivery</a></li>
             </ul>
@@ -33,153 +33,47 @@
 
     <!-- ===== PORTADA ===== -->
     <section id="fondo">
-        <div class="fondo-logo">
+        <div class="fondo-logo fade-in">
             <img src="imagenes/logo.png" alt="">
         </div>
     </section>
 
-    <!-- ===== NOSOTROS ===== -->
-    <section id="nosotros">
-        <div class="nosotros-container">
-
-            <div class="nosotros-texto">
-                <h2>Sobre Nosotros</h2>
-                <p>En Restaurante "Sabor Imperial" ofrecemos una experiencia única,
-                combinando ingredientes frescos con recetas tradicionales peruanas.</p>
-                <p>Nuestro objetivo es brindar calidad, buen servicio y un ambiente
-                acogedor para cada cliente.</p>
-
-                <div class="nosotros-icons">
-                    <div>
-                        <i class="fa-solid fa-utensils"></i>
-                        <p>Comida de calidad</p>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-truck"></i>
-                        <p>Entrega rápida</p>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-star"></i>
-                        <p>Excelente servicio</p>
-                    </div>
+    <!-- ===== DESTACADOS ===== -->
+    <section id="destacados">
+        <h2>Nuestros Platos Más Pedidos</h2>
+        <p class="destacados-subtitle">Descubre los sabores que hacen volver a nuestros clientes una y otra vez.</p>
+        <div class="destacados-container">
+            
+            <div class="destacado-card fade-in">
+                <div class="destacado-img">
+                    <img src="imagenes/polloalabrasa.png" alt="Pollo a la Brasa">
                 </div>
-
-                <div class="horarios-tabla">
-                    <h4>Horario de Atención</h4>
-                    <table>
-                        <tr>
-                            <td>Lunes - Viernes</td>
-                            <td>12:00 pm - 10:00 pm</td>
-                        </tr>
-                        <tr>
-                            <td>Sabado - Domingo</td>
-                            <td>12:00 pm - 01:00 am</td>
-                        </tr>
-                    </table>
-                </div>
-
-            </div>
-
-            <div class="nosotros-img">
-                <img src="imagenes/restaurante.png" alt="Restaurante">
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ===== PLATILLOS ===== -->
-    <section id="platillos">
-        <h2>Platos principales</h2>
-
-        <div class="card-container">
-
-            <div class="card">
-                <img src="imagenes/polloalabrasa.png">
-                <div class="contenido">
-                    <h3>Pollo a la brasa</h3>
-                    <p>Jugoso pollo con papas fritas y ensalada</p>
-                    <span>S/ 25</span>
+                <div class="destacado-info">
+                    <h3>Pollo a la Brasa</h3>
+                    <p>Nuestro plato estrella, marinado con una receta secreta y horneado a la perfección. Acompañado de papas fritas crujientes y ensalada fresca.</p>
+                    <a href="platillos.htm" class="btn-ver-menu">Ver menú</a>
                 </div>
             </div>
 
-            <div class="card">
-                <img src="imagenes/lomosaltado.png">
-                <div class="contenido">
-                    <h3>Lomo saltado</h3>
-                    <p>Carne con cebolla, tomate y papas fritas</p>
-                    <span>S/ 30</span>
+            <div class="destacado-card fade-in">
+                <div class="destacado-img">
+                    <img src="imagenes/ceviche.png" alt="Ceviche Clásico">
+                </div>
+                <div class="destacado-info">
+                    <h3>Ceviche Clásico</h3>
+                    <p>Pescado fresco del día curtido en jugo de limón, acompañado de cebolla roja, camote glaseado, choclo y su toque de ají limo.</p>
+                    <a href="platillos.htm" class="btn-ver-menu">Ver menú</a>
                 </div>
             </div>
 
-            <div class="card">
-                <img src="imagenes/ceviche.png">
-                <div class="contenido">
-                    <h3>Ceviche clásico</h3>
-                    <p>Pescado fresco marinado en limón</p>
-                    <span>S/ 28</span>
+            <div class="destacado-card fade-in">
+                <div class="destacado-img">
+                    <img src="imagenes/lomosaltado.png" alt="Lomo Saltado">
                 </div>
-            </div>
-
-            <div class="card">
-                <img src="imagenes/arrozconpollo.png">
-                <div class="contenido">
-                    <h3>Arroz con pollo</h3>
-                    <p>Arroz verde con pollo y ensalada fresca</p>
-                    <span>S/ 22</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="imagenes/ajidegallina.png">
-                <div class="contenido">
-                    <h3>Ají de gallina</h3>
-                    <p>Crema de gallina con ají amarillo</p>
-                    <span>S/ 24</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="imagenes/secodecarne.png">
-                <div class="contenido">
-                    <h3>Seco de carne</h3>
-                    <p>Carne guisada con culantro y arroz</p>
-                    <span>S/ 26</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="imagenes/tallarinesverdes.png">
-                <div class="contenido">
-                    <h3>Tallarines verdes</h3>
-                    <p>Pasta con salsa de albahaca y queso</p>
-                    <span>S/ 20</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="imagenes/causalimena.png">
-                <div class="contenido">
-                    <h3>Causa limeña</h3>
-                    <p>Papa amarilla rellena de pollo o atún</p>
-                    <span>S/ 18</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="imagenes/anticuchos.png">
-                <div class="contenido">
-                    <h3>Anticuchos</h3>
-                    <p>Brochetas con papas doradas</p>
-                    <span>S/ 15</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="imagenes/papahuancaina.png">
-                <div class="contenido">
-                    <h3>Papa Huancaína</h3>
-                    <p>Papas con crema de ají amarillo y queso</p>
-                    <span>S/ 14</span>
+                <div class="destacado-info">
+                    <h3>Lomo Saltado</h3>
+                    <p>Trozos jugosos de lomo fino salteados al wok con cebolla, tomate y ají amarillo, servido con papas fritas y arroz blanco.</p>
+                    <a href="platillos.htm" class="btn-ver-menu">Ver menú</a>
                 </div>
             </div>
 
@@ -188,47 +82,63 @@
 
     <!-- ===== TESTIMONIOS ===== -->
     <section id="testimonios">
-        <h2>Lo que dicen nuestros clientes</h2>
+        <div class="testimonios-header fade-in">
+            <span class="section-tag">Testimonios</span>
+            <h2>Lo que dicen nuestros clientes</h2>
+            <p class="testimonios-subtitle">La satisfacción de nuestros comensales es nuestra mejor carta de presentación.</p>
+        </div>
 
-        <div class="testimonios-container">
+        <div class="testimonios-container fade-in">
 
             <div class="testimonio">
-                <i class="fa-solid fa-circle-user"></i>
-                <h3>Carlos Mendoza</h3>
-                <p>"El mejor pollo a la brasa de Chimbote, sin duda. El ambiente es acogedor y el servicio muy amable."</p>
-                <div class="estrellas">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                <div class="testimonio-header">
+                    <img src="https://ui-avatars.com/api/?name=Carlos+M&background=333&color=fff&size=150" alt="Cliente" class="testimonio-img">
+                    <div class="testimonio-info">
+                        <h3>Carlos Mendoza</h3>
+                        <div class="estrellas">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
                 </div>
+                <p>"El mejor pollo a la brasa de Chimbote, sin duda. El ambiente es acogedor, el servicio muy amable y la comida siempre llega caliente y a tiempo."</p>
             </div>
 
             <div class="testimonio">
-                <i class="fa-solid fa-circle-user"></i>
-                <h3>María Quispe</h3>
-                <p>"El ceviche está increíble, fresco y bien preparado. Volveré con toda mi familia sin dudarlo."</p>
-                <div class="estrellas">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                <div class="testimonio-header">
+                    <img src="https://ui-avatars.com/api/?name=Ana+R&background=333&color=fff&size=150" alt="Cliente" class="testimonio-img">
+                    <div class="testimonio-info">
+                        <h3>Ana Ramírez</h3>
+                        <div class="estrellas">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                    </div>
                 </div>
+                <p>"Me encanta el ceviche clásico. Los ingredientes se sienten muy frescos y la presentación es de restaurante de 5 estrellas. Muy recomendado."</p>
             </div>
 
             <div class="testimonio">
-                <i class="fa-solid fa-circle-user"></i>
-                <h3>Luis Ramos</h3>
-                <p>"El lomo saltado es espectacular, porciones generosas y precio justo. Mi restaurante favorito."</p>
-                <div class="estrellas">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                <div class="testimonio-header">
+                    <img src="https://ui-avatars.com/api/?name=Luis+P&background=333&color=fff&size=150" alt="Cliente" class="testimonio-img">
+                    <div class="testimonio-info">
+                        <h3>Luis Pérez</h3>
+                        <div class="estrellas">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
                 </div>
+                <p>"Excelente servicio de delivery. La comida llegó en el tiempo prometido y con una temperatura perfecta. ¡El Lomo Saltado estuvo increíble!"</p>
             </div>
 
         </div>
@@ -253,9 +163,8 @@
         </div>
 
         <div class="footer-section">
-            <h4>Horario</h4>
+            <h4>Atención</h4>
             <p>Lunes - Domingo</p>
-            <p>12:00 pm - 10:00 pm</p>
         </div>
 
         <div class="footer-section">

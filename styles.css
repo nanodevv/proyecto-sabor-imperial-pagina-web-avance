@@ -1,3 +1,7 @@
+/* =========================================================
+1. VARIABLES Y CONFIGURACIONES GLOBALES
+========================================================= */
+
 /* =========================
 RESET GENERAL
 ========================= */
@@ -46,6 +50,24 @@ section {
 }
 
 /* =========================
+KEYFRAMES
+========================= */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================================
+2. NAVEGACIÓN Y ENCABEZADOS
+========================================================= */
+
+/* =========================
 HEADER / NAVBAR
 ========================= */
 header {
@@ -55,6 +77,22 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
+}
+
+.fade-in {
+    animation: fadeInUp 0.8s ease;
+}
+
+/* =========================
+HEADER ON LIGHT PAGES (Subpáginas)
+========================= */
+body.light-page header .logo,
+body.light-page header .nav-center a {
+    color: #333;
+}
+
+body.light-page header .nav-center a:hover {
+    color: #ff5733;
 }
 
 .navbar {
@@ -121,6 +159,10 @@ li {
     list-style: none;
 }
 
+/* =========================================================
+3. PÁGINA: INICIO (index.htm)
+========================================================= */
+
 /* =========================
 SECCIÓN FONDO (PORTADA)
 ========================= */
@@ -158,6 +200,304 @@ SECCIÓN FONDO (PORTADA)
 }
 
 /* =========================
+SECCIÓN DESTACADOS
+========================= */
+#destacados {
+    background-color: #fdf6f0;
+    padding: 100px 20px 60px;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#destacados h2 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    font-family: cursive;
+    color: #1a1a1a;
+    z-index: 2;
+}
+
+.destacados-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 50px;
+    max-width: 600px;
+    z-index: 2;
+    line-height: 1.6;
+}
+
+/* Decoraciones de fondo (círculos abstractos) */
+#destacados::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 350px;
+    height: 350px;
+    background: rgba(255, 87, 51, 0.05);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+#destacados::after {
+    content: "";
+    position: absolute;
+    bottom: -150px;
+    right: -100px;
+    width: 450px;
+    height: 450px;
+    background: rgba(255, 87, 51, 0.04);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.destacados-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+    z-index: 2;
+}
+
+.destacado-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 350px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.destacado-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+}
+
+.destacado-img {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.destacado-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.destacado-card:hover .destacado-img img {
+    transform: scale(1.1);
+}
+
+.destacado-info {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.destacado-info h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.destacado-info p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.btn-ver-menu {
+    display: inline-block;
+    background: #ff5733;
+    color: white !important;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+    align-self: center;
+    box-shadow: 0 5px 15px rgba(255, 87, 51, 0.3);
+}
+
+.btn-ver-menu:hover {
+    background: #e64a19;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 87, 51, 0.4);
+}
+
+/* =========================
+SECCIÓN TESTIMONIOS
+========================= */
+#testimonios {
+    background-color: #ffffff;
+    padding: 100px 20px;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#testimonios::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 87, 51, 0.05);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+#testimonios::after {
+    content: "";
+    position: absolute;
+    bottom: -100px;
+    right: -100px;
+    width: 500px;
+    height: 500px;
+    background: rgba(255, 87, 51, 0.04);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.testimonios-header {
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.testimonios-header .section-tag {
+    color: #ff5733;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+#testimonios h2 {
+    color: #1a1a1a;
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    font-family: cursive;
+}
+
+.testimonios-subtitle {
+    font-size: 1.15rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.testimonios-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.testimonio {
+    background: #fdf6f0;
+    border: 1px solid rgba(0,0,0,0.03);
+    padding: 40px 30px;
+    border-radius: 25px;
+    width: 350px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+}
+
+.testimonio:hover {
+    transform: translateY(-10px);
+    border: 1px solid rgba(255,87,51,0.2);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+}
+
+.testimonio-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.testimonio-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    box-shadow: 0 5px 15px rgba(255,87,51,0.15);
+}
+
+.testimonio-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #1a1a1a;
+    font-weight: 800;
+}
+
+.estrellas {
+    display: flex;
+    gap: 4px;
+}
+
+.estrellas i {
+    color: #ff5733;
+    font-size: 0.9rem;
+}
+
+.testimonio p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    font-style: italic;
+    flex-grow: 1;
+    position: relative;
+}
+
+.testimonio p::before {
+    content: "\201C";
+    font-size: 3.5rem;
+    color: rgba(255,87,51,0.1);
+    position: absolute;
+    top: -20px;
+    left: -15px;
+    font-family: Georgia, serif;
+    z-index: 0;
+}
+
+/* =========================================================
+4. PÁGINA: NOSOTROS (nosotros.htm)
+========================================================= */
+
+/* =========================
 SECCIÓN NOSOTROS
 ========================= */
 #nosotros {
@@ -166,42 +506,188 @@ SECCIÓN NOSOTROS
     justify-content: center;
     align-items: center;
     background-color: #ffffff;
-    padding: 20px;
-    border-left: 5px solid #ff5733;
+    padding: 100px 20px 20px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+#nosotros::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 87, 51, 0.05) 0%, transparent 70%);
+    z-index: 0;
 }
 
 .nosotros-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
-    max-width: 1100px;
+    gap: 60px;
+    max-width: 1200px;
     margin: auto;
+    position: relative;
+    z-index: 1;
 }
 
 .nosotros-texto {
     width: 50%;
 }
 
+.section-tag {
+    display: inline-block;
+    color: #ff5733;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
 .nosotros-texto h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #333;
+    font-size: 3.5rem;
+    color: #1a1a1a;
+    margin-bottom: 25px;
+    line-height: 1.1;
+}
+
+.nosotros-texto h2::after {
+    margin: 15px 0 0; /* Left aligned line */
+}
+
+.lead-text {
+    font-size: 1.3rem;
+    color: #ff5733 !important;
+    font-weight: 500;
+    margin-bottom: 20px !important;
 }
 
 .nosotros-texto p {
-    margin-bottom: 15px;
-    line-height: 1.7;
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
     color: #555;
+}
+
+.nosotros-stats {
+    display: flex;
+    gap: 40px;
+    margin: 35px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 25px 0;
+}
+
+.stat-box h3 {
+    font-size: 2.8rem;
+    color: #333;
+    font-family: 'Lobster', cursive;
+    margin-bottom: 5px;
+}
+
+.stat-box p {
+    font-size: 0.9rem !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0 !important;
+    color: #888 !important;
 }
 
 .nosotros-img {
     width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.nosotros-img img {
+.img-composition {
+    position: relative;
     width: 100%;
-    border-radius: 15px;
+    max-width: 550px;
+    aspect-ratio: 4/5;
+}
+
+.img-main {
+    width: 80%;
+    height: 85%;
+    object-fit: cover;
+    border-radius: 25px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.img-secondary {
+    width: 55%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    border: 10px solid #ffffff;
+    box-shadow: -10px 15px 35px rgba(0,0,0,0.15);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.img-composition:hover .img-main {
+    transform: scale(1.03) translate(5px, -5px);
+}
+
+.img-composition:hover .img-secondary {
+    transform: scale(1.05) translate(-10px, 10px);
+}
+
+.glass-panel {
+    position: absolute;
+    bottom: -15px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 18px 25px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    animation: fadeInUp 1s ease 0.5s both;
+    z-index: 10;
+}
+
+.glass-panel i {
+    font-size: 28px;
+    color: #ff5733;
+    background: rgba(255, 87, 51, 0.1);
+    padding: 12px;
+    border-radius: 50%;
+}
+
+.glass-panel div {
+    display: flex;
+    flex-direction: column;
+}
+
+.badge-title {
+    font-weight: 800;
+    font-size: 1.15rem;
+    color: #1a1a1a;
+    line-height: 1.2;
+}
+
+.badge-subtitle {
+    font-size: 0.9rem;
+    color: #ff5733;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .nosotros-icons {
@@ -212,6 +698,15 @@ SECCIÓN NOSOTROS
 
 .nosotros-icons div {
     text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.nosotros-icons div:hover {
+    background-color: rgba(255, 87, 51, 0.05);
+    transform: translateY(-5px);
 }
 
 .nosotros-icons i {
@@ -219,37 +714,408 @@ SECCIÓN NOSOTROS
     color: #ff5733;
 }
 
-.horarios-tabla {
-    margin-top: 30px;
-    background-color: #fafafa;
-    padding: 15px 20px;
-    border-radius: 8px;
-    border: 1px solid #f0f0f0;
-    max-width: 350px;
+/* =========================
+SECCIÓN EQUIPO
+========================= */
+#equipo {
+    padding: 100px 20px;
+    background-color: #fdf6f0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.horarios-tabla h4 {
-    margin-bottom: 12px;
-    color: #444;
-    font-size: 15px;
-    font-weight: 600;
+#equipo::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    right: -100px;
+    width: 500px;
+    height: 500px;
+    background: rgba(255, 87, 51, 0.05);
+    border-radius: 50%;
+    z-index: 1;
 }
 
-.horarios-tabla table {
+#equipo::after {
+    content: "";
+    position: absolute;
+    bottom: -100px;
+    left: -150px;
+    width: 600px;
+    height: 600px;
+    background: rgba(255, 87, 51, 0.04);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.equipo-container {
+    max-width: 1200px;
     width: 100%;
-    border-collapse: collapse;
+    margin: auto;
+    position: relative;
+    z-index: 2;
 }
 
-.horarios-tabla td {
-    padding: 6px 0;
-    font-size: 14px;
-    color: #666;
+.equipo-header {
+    margin-bottom: 60px;
 }
 
-.horarios-tabla td:last-child {
-    text-align: right;
-    font-weight: 500;
+.equipo-header h2 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    font-family: cursive;
+    color: #1a1a1a;
+}
+
+.equipo-header .lead-text {
+    font-size: 1.2rem;
+    color: #666 !important;
+}
+
+.equipo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    text-align: left;
+}
+
+.equipo-card {
+    background: white;
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.equipo-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+}
+
+.equipo-img-wrapper {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 6px solid #fdf6f0;
+    box-shadow: 0 10px 25px rgba(255,87,51,0.2);
+    transition: transform 0.4s ease, border-color 0.4s ease;
+    flex-shrink: 0;
+}
+
+.equipo-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.equipo-card:hover .equipo-img-wrapper {
+    transform: scale(1.05) rotate(5deg);
+    border-color: #ff5733;
+}
+
+.equipo-info {
+    flex-grow: 1;
+}
+
+.equipo-info h3 {
+    font-size: 1.5rem;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+    font-weight: 800;
+}
+
+.equipo-rol {
     color: #ff5733;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.equipo-desc {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.equipo-social {
+    display: flex;
+    gap: 15px;
+}
+
+.equipo-social i {
+    font-size: 1.2rem;
+    color: #aaa;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.equipo-social i:hover {
+    color: #ff5733;
+}
+
+/* =========================
+SECCIÓN HORARIOS (Clean Style)
+========================= */
+#horarios {
+    min-height: 100vh;
+    padding: 100px 20px 20px 20px;
+    background-color: #ffffff; /* Cambiado a blanco para contrastar con nosotros */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decoraciones de fondo abstracto para horarios */
+#horarios::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 87, 51, 0.03);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+#horarios::after {
+    content: "";
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 87, 51, 0.04);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.horarios-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    z-index: 2;
+    position: relative;
+}
+
+.horarios-img {
+    width: 45%;
+    position: relative;
+}
+
+.horarios-img img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    transition: transform 0.4s ease;
+}
+
+.horarios-img img:hover {
+    transform: translateY(-10px);
+}
+
+/* Badge flotante para la imagen de horarios */
+.horario-badge {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    background: #ff5733;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(255, 87, 51, 0.3);
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: fadeInUp 1s ease 0.5s both;
+    z-index: 3;
+}
+
+.horario-badge i {
+    font-size: 24px;
+}
+
+.horarios-texto {
+    width: 55%;
+}
+
+.horarios-texto h2 {
+    font-size: 3.5rem;
+    color: #1a1a1a;
+    margin-bottom: 25px;
+    line-height: 1.1;
+}
+
+.horarios-texto h2::after {
+    margin: 15px 0 0;
+}
+
+.horario-list {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.horario-item {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.3s ease;
+}
+
+.horario-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.horario-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 87, 51, 0.1);
+    color: #ff5733;
+    font-size: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.horario-info {
+    flex-grow: 1;
+}
+
+.horario-info h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.horario-info p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
+}
+
+.badge {
+    background: #eee;
+    color: #666;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.badge.open {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.horario-item.accent-item {
+    border-left: 5px solid #ff5733;
+}
+
+.btn-delivery-inline {
+    background: #ff5733;
+    color: white;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-delivery-inline:hover {
+    background: #e64a19;
+}
+
+/* =========================================================
+5. PÁGINA: PLATILLOS (platillos.htm)
+========================================================= */
+
+/* =========================
+HEADER PLATILLOS
+========================= */
+.platillos-header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1250px;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+    flex-wrap: wrap;
+    gap: 30px;
+    text-align: left;
+}
+
+.platillos-header-text {
+    flex: 1;
+}
+
+.platillos-header-text .section-tag {
+    margin-bottom: 10px !important;
+}
+
+.platillos-header-text h2 {
+    margin-bottom: 15px !important;
+    text-align: left;
+}
+
+.platillos-header-text .platillos-subtitle {
+    margin-bottom: 0 !important;
+    max-width: 800px;
+}
+
+.btn-whatsapp-title {
+    background-color: #ff5733;
+    color: white !important;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-whatsapp-title i {
+    font-size: 1.5rem;
+}
+
+.btn-whatsapp-title:hover {
+    transform: translateY(-3px) scale(1.02);
 }
 
 /* =========================
@@ -257,143 +1123,405 @@ SECCIÓN PLATILLOS
 ========================= */
 #platillos {
     background-color: #fdf6f0;
-    padding: 15px 20px;
+    padding: 120px 20px 80px 20px;
     text-align: center;
     min-height: 100vh;
-    border-left: 5px solid #ff5733;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#platillos::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 87, 51, 0.04);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+#platillos::after {
+    content: "";
+    position: absolute;
+    bottom: -150px;
+    right: -100px;
+    width: 500px;
+    height: 500px;
+    background: rgba(255, 87, 51, 0.03);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+#platillos .section-tag {
+    position: relative;
+    z-index: 2;
+    display: block;
+    margin-bottom: 10px;
+    color: #ff5733;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
 }
 
 #platillos h2 {
-    padding-bottom: 30px;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 3rem;
+    margin-bottom: 15px;
     font-family: cursive;
+    color: #1a1a1a;
+    position: relative;
+    z-index: 2;
+}
+
+.platillos-subtitle {
+    font-size: 1.15rem;
+    color: #666;
+    margin-bottom: 50px;
+    max-width: 650px;
+    z-index: 2;
+    position: relative;
+    line-height: 1.6;
 }
 
 .card-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 25px;
-    max-width: 1200px;
+    gap: 35px;
+    max-width: 1250px;
     margin: auto;
+    position: relative;
+    z-index: 2;
 }
 
 .card {
-    width: 220px;
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 0px 6px 15px rgba(0,0,0,0.15);
-    background-color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    width: 280px;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.06);
     overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0px 12px 25px rgba(0,0,0,0.25);
+    transform: translateY(-12px);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.15);
 }
 
-.card img {
+.card-img-wrapper {
+    position: relative;
     width: 100%;
-    border-radius: 8px;
-    transition: transform 0.4s ease;
+    height: 220px;
+    overflow: hidden;
 }
 
-.card:hover img {
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover .card-img-wrapper img {
     transform: scale(1.1);
 }
 
+.price-badge {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 800;
+    color: #ff5733;
+    font-size: 1.1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
 .contenido {
+    padding: 25px 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
 }
 
 .card h3 {
-    margin: 10px 0;
+    font-size: 1.35rem;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    font-weight: 700;
 }
 
-.card span {
-    display: block;
-    margin-top: 8px;
-    font-weight: bold;
-    color: #ff5733;
+.card p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
 }
+
+.btn-card {
+    align-self: flex-start;
+    background: transparent;
+    color: #ff5733;
+    border: 2px solid #ff5733;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.card:hover .btn-card {
+    background: #ff5733;
+    color: white;
+}
+
+/* =========================================================
+6. PÁGINA: RESERVAS (reserva.htm)
+========================================================= */
 
 /* =========================
-SECCIÓN TESTIMONIOS
+LOGIN / RESERVA
 ========================= */
-#testimonios {
-    background-color: #1a1a1a;
-    padding: 80px 20px;
-    text-align: center;
-    min-height: 60vh;
+.login-body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url('imagenes/restaurante.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.login-body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.login-wrapper {
+    position: relative;
+    z-index: 1;
     display: flex;
-    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    padding: 85px 20px 20px;
+    animation: fadeInUp 0.8s ease;
+}
+
+.login-left {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid rgba(255,255,255,0.2);
+}
+
+.login-left img {
+    width: 320px;
+}
+
+.login-container {
+    width: 50%;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#testimonios h2 {
+.login-box {
+    width: 380px;
+    padding: 25px 30px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    text-align: center;
     color: white;
-    font-size: 2.5rem;
-    margin-bottom: 50px;
+}
+
+.login-box h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2px;
     font-family: cursive;
-}
-
-#testimonios h2::after {
-    background: #ff5733;
-}
-
-.testimonios-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    max-width: 1100px;
-    margin: auto;
-}
-
-.testimonio {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 35px 30px;
-    border-radius: 15px;
-    width: 300px;
     color: white;
+}
+
+.reserva-subtitle {
+    font-size: 0.85rem;
+    color: #ddd;
+    margin-bottom: 15px;
+}
+
+.reserva-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-row {
+    display: flex;
+    gap: 10px;
+}
+
+.input-row .input-group {
+    flex: 1;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 0.75rem;
+    margin-bottom: 4px;
+    color: #eee;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper i {
+    position: absolute;
+    left: 12px;
+    color: #aaa;
+    font-size: 1rem;
     transition: 0.3s;
 }
 
-.testimonio:hover {
-    transform: translateY(-5px);
-    background: rgba(255,255,255,0.08);
-}
-
-.testimonio i.fa-circle-user {
-    font-size: 50px;
-    color: #ff5733;
-    margin-bottom: 15px;
-}
-
-.testimonio h3 {
-    font-size: 1.1rem;
-    margin-bottom: 12px;
+.input-wrapper input {
+    width: 100%;
+    padding: 10px 10px 10px 38px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.2);
+    outline: none;
+    background: rgba(255,255,255,0.1);
     color: white;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
 }
 
-.testimonio p {
-    font-size: 14px;
-    line-height: 1.7;
-    color: #ccc;
-    margin-bottom: 15px;
+.input-wrapper input:focus {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255, 87, 51, 0.8);
+    box-shadow: 0 0 10px rgba(255, 87, 51, 0.4);
 }
 
-.estrellas i {
+.input-wrapper:focus-within i {
     color: #ff5733;
-    font-size: 14px;
 }
+
+.input-wrapper input::placeholder {
+    color: #bbb;
+}
+
+/* Fix for date and time picker icon overriding */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.btn-reserva {
+    width: 100%;
+    padding: 12px;
+    background: #ff5733;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 5px 15px rgba(255, 87, 51, 0.3);
+}
+
+.btn-reserva:hover {
+    background: #e64a19;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 87, 51, 0.5);
+}
+
+.reserva-contact {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.reserva-contact p {
+    font-size: 0.85rem;
+    color: #ccc;
+    margin-bottom: 5px;
+}
+
+.reserva-phone {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.reserva-phone i {
+    color: #ff5733;
+}
+
+.reserva-phone:hover {
+    color: #ff5733;
+}
+
+.login-box button:hover {
+    background: #e64a19;
+    transform: scale(1.05);
+}
+
+.login-box p {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #ddd;
+}
+
+/* =========================================================
+7. PIE DE PÁGINA (Footer)
+========================================================= */
 
 /* =========================
 FOOTER
@@ -455,130 +1583,79 @@ footer {
     color: #aaa;
 }
 
-/* =========================
-LOGIN / RESERVA
-========================= */
-.login-body {
-    margin: 0;
-    height: 100vh;
-    background-image: url('imagenes/restaurante.png');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.login-body::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.65);
-    top: 0;
-    left: 0;
-    z-index: 0;
-}
-
-.login-wrapper {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    height: calc(100vh - 80px);
-    align-items: center;
-    animation: fadeInUp 0.8s ease;
-}
-
-.login-left {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-right: 2px solid rgba(255,255,255,0.2);
-}
-
-.login-left img {
-    width: 400px;
-}
-
-.login-container {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.login-box {
-    width: 400px;
-    padding: 45px 40px;
-    border-radius: 15px;
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    text-align: center;
-    color: white;
-}
-
-.login-box h2 {
-    margin-bottom: 20px;
-}
-
-.login-box label {
-    display: block;
-    text-align: left;
-    font-size: 13px;
-    margin-bottom: 4px;
-    color: #ddd;
-}
-
-.login-box input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 12px;
-    border-radius: 8px;
-    border: none;
-    outline: none;
-    background: rgba(255,255,255,0.2);
-    color: white;
-}
-
-.login-box input::placeholder {
-    color: #ddd;
-}
-
-.login-box button {
-    width: 100%;
-    padding: 12px;
-    background: #ff5733;
-    border: none;
-    color: white;
-    border-radius: 25px;
-    cursor: pointer;
-    margin-top: 10px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.login-box button:hover {
-    background: #e64a19;
-    transform: scale(1.05);
-}
-
-.login-box p {
-    margin-top: 20px;
-    font-size: 13px;
-    color: #ddd;
-}
-
-/* =========================
-   KEYFRAMES
-========================= */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
+/* =========================================================
+8. RESPONSIVE / MEDIA QUERIES (Laptops y Pantallas)
+========================================================= */
+@media (max-width: 1550px) {
+    html {
+        font-size: 14px; /* Disminuye un poco los tamaños de fuentes generales (rem) */
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+    /* Reducir márgenes y paddings globales para que no sea abrumador */
+    #destacados, #testimonios, #nosotros, #equipo, #horarios, #platillos {
+        padding-top: 80px;
+        padding-bottom: 50px;
+    }
+
+    .navbar {
+        padding: 20px 40px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .nav-center {
+        gap: 30px;
+    }
+
+    /* Ajustar anchos máximos de los contenedores para centrado estético */
+    .destacados-container, 
+    .testimonios-container, 
+    .nosotros-container, 
+    .equipo-container, 
+    .horarios-container, 
+    .card-container, 
+    .platillos-header-wrapper,
+    .footer-container {
+        max-width: 1050px;
+        gap: 30px;
+    }
+
+    /* Reducir ligeramente el tamaño de las tarjetas */
+    .destacado-card, .testimonio {
+        width: 300px;
+    }
+    
+    .destacado-img {
+        height: 210px;
+    }
+
+    .card {
+        width: 260px;
+    }
+    
+    .card-img-wrapper {
+        height: 190px;
+    }
+
+    /* Sección Nosotros / Horarios - Imágenes */
+    .img-composition {
+        max-width: 450px;
+    }
+
+    .nosotros-stats {
+        gap: 30px;
+        margin: 25px 0;
+    }
+
+    /* Header del login */
+    .login-left img {
+        width: 280px;
+    }
+    
+    .login-box {
+        width: 350px;
+        padding: 20px 25px;
     }
 }
